@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import _ from "lodash";
 import PropTypes from "prop-types";
 
-const Page = props => {
+const Page = ({ itemCount, pageSize, onPageChange, currentPage }) => {
   // we should have page numbers, map each to list of items
-  const { itemCount, pageSize, onPageChange, currentPage } = props;
-  console.log(currentPage);
   const pagesCount = Math.ceil(itemCount / pageSize);
   if (pagesCount === 1) return null;
   const pages = _.range(1, pagesCount + 1);
